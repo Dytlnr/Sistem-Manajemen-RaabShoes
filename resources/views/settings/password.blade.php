@@ -1,0 +1,15 @@
+@extends('layouts.admin')
+
+@section('page-title', 'Pengaturan Sistem')
+@section('page-subtitle', 'Konfigurasi dan kelola seluruh pengaturan sistem (admin only)')
+@section('active-menu', 'settings')
+
+@push('styles')
+<style>
+.settings-card{background:rgba(255,255,255,.98);border-radius:34px;box-shadow:var(--shadow);overflow:hidden}.tabs{display:flex;align-items:center;gap:34px;padding:24px 34px 22px;border-bottom:2px solid var(--orange)}.tab{display:inline-flex;align-items:center;gap:12px;font-size:.98rem;font-weight:700;color:#7f7f84}.tab svg{width:28px;height:28px}.tab.active{color:var(--orange)}.settings-body{padding:28px 34px 34px}.section-title{margin:0 0 26px;font-size:1.02rem;font-weight:700}.form-wrap{max-width:640px}.field{display:flex;flex-direction:column;gap:8px;margin-bottom:24px}.field label{font-size:.98rem;font-weight:500}.field input{height:66px;padding:0 18px;border:2px solid var(--orange);border-radius:18px;outline:none;background:#fff;font-size:.98rem}.field input::placeholder{color:#ababaf}.save-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-width:268px;height:58px;padding:0 24px;border:0;border-radius:18px;background:linear-gradient(180deg,#ff8c0d 0%,#f57c00 100%);color:#fff;font-size:.98rem;font-weight:600;box-shadow:0 10px 20px rgba(245,124,0,.2)}.save-btn svg{width:22px;height:22px}@media(max-width:700px){.tabs{flex-direction:column;align-items:flex-start;gap:16px}.settings-body{padding-left:20px;padding-right:20px}.save-btn{width:100%;min-width:0}}
+</style>
+@endpush
+
+@section('content')
+<section class="settings-card"><div class="tabs"><a href="{{ route('settings.index') }}" class="tab"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 11a4 4 0 1 1 0-8 4 4 0 0 1 0 8Zm8 1a3 3 0 1 1 0-6 3 3 0 0 1 0 6ZM4 20a5 5 0 0 1 10 0H4Zm9.5 0a4.5 4.5 0 0 1 8.5 0h-8.5Z"/></svg><span>Manajemen Akun Pegawai</span></a><a href="{{ route('settings.password') }}" class="tab active"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 9h-1V7a4 4 0 0 0-8 0v2H7a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2Zm-6 6.7V17a1 1 0 1 0 2 0v-1.3a2 2 0 1 0-2 0ZM10 9V7a2 2 0 1 1 4 0v2h-4Z"/></svg><span>Ganti Password</span></a></div><div class="settings-body"><h2 class="section-title">Ganti Password</h2><div class="form-wrap"><div class="field"><label>Password Lama</label><input type="password" placeholder="Masukkan password lama"></div><div class="field"><label>Password Baru</label><input type="password" placeholder="Masukkan password baru"></div><div class="field"><label>Konfirmasi Password Baru</label><input type="password" placeholder="Masukkan password baru"></div><button type="button" class="save-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2Z"/><path d="M17 21v-8H7v8"/><path d="M7 3v5h8"/></svg><span>Simpan Password Baru</span></button></div></div></section>
+@endsection
