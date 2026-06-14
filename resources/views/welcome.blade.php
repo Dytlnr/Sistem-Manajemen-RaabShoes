@@ -697,12 +697,29 @@
         }
 
         @media (max-width: 768px) {
+            html,
+            body {
+                width: 100%;
+                max-width: 100%;
+                overflow-x: hidden;
+            }
+
             .page-shell {
-                width: min(100% - 18px, 100%);
-                margin: 9px auto;
-                min-height: calc(100vh - 18px);
-                border-radius: 24px;
-                padding: 20px 16px 28px;
+                width: 100%;
+                max-width: 100vw;
+                margin: 0;
+                min-height: 100vh;
+                border-radius: 0;
+                padding: 18px 18px 32px;
+                overflow: hidden;
+            }
+
+            .nav {
+                position: relative;
+                flex-direction: column;
+                justify-content: flex-start;
+                gap: 18px;
+                padding: 12px 0 10px;
             }
 
             .brand {
@@ -718,6 +735,18 @@
                 width: 100%;
                 justify-content: center;
                 flex-wrap: wrap;
+                gap: 12px;
+                order: 2;
+            }
+
+            .nav-links {
+                order: 3;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                gap: 18px 24px;
+                font-size: 1rem;
+                line-height: 1.2;
             }
 
             .services-dropdown {
@@ -732,27 +761,51 @@
             }
 
             .button {
-                min-width: 138px;
+                min-width: min(44vw, 138px);
                 padding: 12px 22px;
                 border-radius: 15px;
             }
 
+            .hero {
+                display: flex;
+                flex-direction: column;
+                min-height: auto;
+                gap: 22px;
+                padding: 34px 0 0;
+            }
+
             .hero-copy {
                 padding: 8px 0 0;
+                max-width: 100%;
+                text-align: center;
             }
 
             .eyebrow,
             .headline {
-                font-size: clamp(3.5rem, 16vw, 4.5rem);
+                font-size: clamp(3.1rem, 15vw, 4.2rem);
+                letter-spacing: 0;
+                overflow-wrap: anywhere;
             }
 
             .description {
-                font-size: 1.18rem;
-                line-height: 1.6;
+                max-width: 100%;
+                font-size: 1rem;
+                line-height: 1.55;
             }
 
             .management-box {
                 text-align: left;
+                width: 100%;
+                padding: 16px 18px;
+                border-radius: 16px;
+            }
+
+            .management-box h2 {
+                font-size: 1.05rem;
+            }
+
+            .management-box p {
+                font-size: 0.92rem;
             }
 
             .hero-buttons .button {
@@ -760,8 +813,13 @@
             }
 
             .hero-visual {
-                min-height: 760px;
-                padding-top: 20px;
+                width: 100%;
+                min-height: auto;
+                padding: 8px 0 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
             }
 
             .feature-card,
@@ -770,18 +828,26 @@
                 top: auto;
                 left: auto;
                 right: auto;
-                width: min(100%, 360px);
-                margin: 0 auto 16px;
+                width: 100%;
+                max-width: 340px;
+                margin: 0 auto;
+                padding: 13px 16px;
+                border-radius: 20px;
+                z-index: 3;
             }
 
             .orbit {
-                width: min(100%, 420px);
-                top: 220px;
+                width: min(112vw, 380px);
+                top: 180px;
+                left: 50%;
+                transform: translateX(-50%);
+                opacity: 0.78;
             }
 
             .shoe-showcase {
                 width: 100%;
-                margin-top: 220px;
+                max-width: 320px;
+                margin-top: 12px;
             }
 
             .shoe {
@@ -790,20 +856,23 @@
             }
 
             .shoe-photo {
-                width: min(100%, 300px);
+                width: min(100%, 270px);
             }
 
             .labels {
-                gap: 10px;
+                width: min(100%, 270px);
+                bottom: 18px;
+                gap: 0;
             }
 
             .label {
-                min-width: 140px;
-                padding: 12px 18px;
-                font-size: 1rem;
+                min-width: 0;
+                padding: 7px 12px;
+                font-size: 0.9rem;
             }
 
             .faq-section {
+                margin-top: 28px;
                 padding: 24px 20px;
                 border-radius: 24px;
             }
@@ -815,6 +884,45 @@
 
             .faq-answer {
                 padding: 0 18px 18px;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .page-shell {
+                padding-left: 14px;
+                padding-right: 14px;
+            }
+
+            .nav-links {
+                gap: 16px 18px;
+                font-size: 0.92rem;
+            }
+
+            .button {
+                min-width: calc(50% - 8px);
+                padding-left: 14px;
+                padding-right: 14px;
+            }
+
+            .eyebrow,
+            .headline {
+                font-size: clamp(2.7rem, 14vw, 3.45rem);
+            }
+
+            .feature-title,
+            .contact-title {
+                font-size: 0.95rem;
+            }
+
+            .feature-text,
+            .contact-text {
+                font-size: 0.86rem;
+            }
+
+            .icon-box {
+                width: 44px;
+                height: 44px;
+                border-radius: 14px;
             }
         }
     </style>
