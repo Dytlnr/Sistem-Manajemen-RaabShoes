@@ -917,96 +917,11 @@
                 </article>
 
                 <div class="shoe-showcase">
-                    @php($shoePhotoPath = 'images/shoes-before-after.png')
-
-                    @if(file_exists(public_path($shoePhotoPath)))
-                        <img
-                            class="shoe-photo"
-                            src="{{ asset($shoePhotoPath) }}"
-                            alt="Before and after shoe cleaning"
-                        >
-                    @else
-                        <div class="shoe-pair">
-                            <svg class="shoe" viewBox="0 0 220 480" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <defs>
-                                    <linearGradient id="dirtyBody" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" stop-color="#dfd8cb" />
-                                        <stop offset="100%" stop-color="#ae9d86" />
-                                    </linearGradient>
-                                </defs>
-                                <path d="M135 31c24 7 47 25 58 51 10 25 10 56 5 88-4 23-3 51 7 92 10 42 12 77 5 106-9 40-36 75-86 84-23 4-51 1-71-17-22-20-33-54-39-86-8-39-10-72-19-110-8-34-11-68-3-99 6-25 23-49 49-63 28-15 65-21 94-10Z" fill="url(#dirtyBody)"/>
-                                <path d="M141 44c20 7 38 21 47 42 9 19 9 44 5 70-4 28-2 58 8 100 8 33 10 65 3 90-8 30-28 56-66 65-20 4-42 2-58-12-17-14-27-39-33-69-8-39-10-72-18-109-7-32-10-61-4-87 5-21 18-39 38-50 23-13 54-19 78-12Z" fill="#cfc3b1"/>
-                                <path d="M96 26c-7 26-22 51-43 70-18 16-28 31-33 49 14 10 30 15 46 16 29 2 60-7 95-18 13-4 26-8 40-8-5-47-25-89-105-109Z" fill="#efe8dd" opacity="0.62"/>
-                                <g stroke="#93846f" stroke-linecap="round" stroke-width="4.2" opacity="0.95">
-                                    <path d="M83 112l43 9"/>
-                                    <path d="M76 133l53 10"/>
-                                    <path d="M70 155l61 12"/>
-                                    <path d="M64 178l69 14"/>
-                                    <path d="M61 202l73 15"/>
-                                    <path d="M60 227l74 15"/>
-                                    <path d="M62 252l72 14"/>
-                                    <path d="M66 277l66 12"/>
-                                    <path d="M74 301l57 9"/>
-                                </g>
-                                <g fill="#91816c" opacity="0.52">
-                                    <ellipse cx="63" cy="324" rx="20" ry="7"/>
-                                    <ellipse cx="90" cy="353" rx="24" ry="8"/>
-                                    <ellipse cx="119" cy="378" rx="24" ry="7"/>
-                                    <ellipse cx="85" cy="414" rx="38" ry="12"/>
-                                </g>
-                                <g fill="#80715e" opacity="0.45">
-                                    <circle cx="110" cy="338" r="3"/>
-                                    <circle cx="128" cy="340" r="3"/>
-                                    <circle cx="95" cy="352" r="3"/>
-                                    <circle cx="116" cy="357" r="3"/>
-                                    <circle cx="135" cy="358" r="3"/>
-                                    <circle cx="86" cy="369" r="3"/>
-                                    <circle cx="107" cy="372" r="3"/>
-                                    <circle cx="127" cy="373" r="3"/>
-                                </g>
-                                <path d="M42 385c43 8 85 12 126 4 11-2 17 6 17 16 0 11-7 21-18 24-49 14-96 13-139 2-16-4-24-20-18-33 5-10 17-16 32-13Z" fill="#c7b39b"/>
-                                <path d="M51 407c40 8 79 10 118 4" stroke="#8d7960" stroke-width="5" stroke-linecap="round" opacity="0.55"/>
-                                <path d="M88 83c14-8 34-8 50-2 10 4 18 14 23 27-24-6-50-4-75 5-14 5-29 12-45 12 7-18 23-33 47-42Z" fill="#f4eee6"/>
-                            </svg>
-
-                            <svg class="shoe" viewBox="0 0 220 480" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <defs>
-                                    <linearGradient id="cleanBody" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" stop-color="#ffffff" />
-                                        <stop offset="100%" stop-color="#ececf0" />
-                                    </linearGradient>
-                                </defs>
-                                <path d="M135 31c24 7 47 25 58 51 10 25 10 56 5 88-4 23-3 51 7 92 10 42 12 77 5 106-9 40-36 75-86 84-23 4-51 1-71-17-22-20-33-54-39-86-8-39-10-72-19-110-8-34-11-68-3-99 6-25 23-49 49-63 28-15 65-21 94-10Z" fill="url(#cleanBody)"/>
-                                <path d="M141 44c20 7 38 21 47 42 9 19 9 44 5 70-4 28-2 58 8 100 8 33 10 65 3 90-8 30-28 56-66 65-20 4-42 2-58-12-17-14-27-39-33-69-8-39-10-72-18-109-7-32-10-61-4-87 5-21 18-39 38-50 23-13 54-19 78-12Z" fill="#fafbfd"/>
-                                <path d="M96 26c-7 26-22 51-43 70-18 16-28 31-33 49 14 10 30 15 46 16 29 2 60-7 95-18 13-4 26-8 40-8-5-47-25-89-105-109Z" fill="#ffffff" opacity="0.85"/>
-                                <g stroke="#d7dce4" stroke-linecap="round" stroke-width="4">
-                                    <path d="M83 112l43 9"/>
-                                    <path d="M76 133l53 10"/>
-                                    <path d="M70 155l61 12"/>
-                                    <path d="M64 178l69 14"/>
-                                    <path d="M61 202l73 15"/>
-                                    <path d="M60 227l74 15"/>
-                                    <path d="M62 252l72 14"/>
-                                    <path d="M66 277l66 12"/>
-                                    <path d="M74 301l57 9"/>
-                                </g>
-                                <g fill="#9fa8b4" opacity="0.8">
-                                    <circle cx="110" cy="338" r="2.8"/>
-                                    <circle cx="128" cy="340" r="2.8"/>
-                                    <circle cx="95" cy="352" r="2.8"/>
-                                    <circle cx="116" cy="357" r="2.8"/>
-                                    <circle cx="135" cy="358" r="2.8"/>
-                                    <circle cx="86" cy="369" r="2.8"/>
-                                    <circle cx="107" cy="372" r="2.8"/>
-                                    <circle cx="127" cy="373" r="2.8"/>
-                                </g>
-                                <path d="M42 385c43 8 85 12 126 4 11-2 17 6 17 16 0 11-7 21-18 24-49 14-96 13-139 2-16-4-24-20-18-33 5-10 17-16 32-13Z" fill="#f8f8fb"/>
-                                <path d="M51 406c40 8 79 10 118 4" stroke="#d7dce4" stroke-width="5" stroke-linecap="round"/>
-                                <path d="M88 83c14-8 34-8 50-2 10 4 18 14 23 27-24-6-50-4-75 5-14 5-29 12-45 12 7-18 23-33 47-42Z" fill="#ffffff"/>
-                                <path d="M153 124c16 9 28 23 36 41" stroke="#e3e7ee" stroke-width="7" stroke-linecap="round" opacity="0.85"/>
-                            </svg>
-                        </div>
-                    @endif
+                    <img
+                        class="shoe-photo"
+                        src="{{ asset('images/shoes-before-after.png') }}"
+                        alt="Before and after shoe cleaning"
+                    >
 
                     <div class="labels">
                         <span class="label before">Before</span>
